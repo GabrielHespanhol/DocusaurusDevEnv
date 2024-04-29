@@ -37,3 +37,11 @@ DOCUSAURUS_WIKI="/home/seuusuario/Documentos/wiki/"
 NGINX_DEFAULT="/home/seuusuario/Documentos/DocusaurusDevEnv/nginx-settings/default"
 NGINX_CONF="/home/seuusuario/Documentos/DocusaurusDevEnv/nginx-settings/nginx.conf"
 ```
+
+# Executando o ambiente
+
+Para iniciar seu ambiente, basta executar o comando:
+
+```
+docker compose up -d
+```
