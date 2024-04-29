@@ -1,0 +1,23 @@
+services:
+  webserver:
+    container_name: webserver
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ${NGINX_DEFAULT}:/etc/nginx/sites-enabled/default:ro
+      - ${NGINX_CONF}:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - docusaurus
+    cpus: 0.5
+    mem_limit: 128M
+    mem_reservation: 64M
+
+  docusaurus:
+    container_name: docusaurus
+    image: docusaurus:1.0
+    build:
+      context: ${DOCUSAURUS_DOCKERFILE}
+      dockerfile: ./Dockerfile
+    volumes: 
+      - ${DOCUSAURUS_WIKI}:/app/:rw
